@@ -39,11 +39,10 @@ WORKDIR /comfyui/custom_nodes/ComfyUI-Easy-Use
 
 RUN pip3 install -r "requirements.txt"
 
+WORKDIR /comfyui/models
+RUN mkdir -p clip_interrogator
+RUN mkdir -p /comfyui/models/clip_interrogator
 WORKDIR /comfyui
-
-
-
-
 # Support for the network volume
 ADD src/extra_model_paths.yaml ./
 
